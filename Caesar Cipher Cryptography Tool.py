@@ -19,3 +19,24 @@ def caesar_cipher(text, shift, mode='encrypt'):
     return result
 
 def main():
+    print("--- Cryptography Tool: Caesar Cipher ---")
+    
+    while True:
+        action = input("\nChoose: (E)ncrypt, (D)ecrypt, or (Q)uit: ").upper()
+        if action == 'Q': break
+        
+        if action in ['E', 'D']:
+            message = input("Enter your message: ")
+            try:
+                key = int(input("Enter shift key (1-25): "))
+                mode = 'encrypt' if action == 'E' else 'decrypt'
+                
+                output = caesar_cipher(message, key, mode)
+                print(f"\nResult: {output}")
+            except ValueError:
+                print("Invalid key. Please enter a number.")
+        else:
+            print("Invalid option.")
+
+if __name__ == "__main__":
+    main()
