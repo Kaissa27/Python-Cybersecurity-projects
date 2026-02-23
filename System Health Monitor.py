@@ -31,4 +31,11 @@ def main():
             else:
                 print("STATUS: [OK] Normal")
                 
-            print
+            print("-" * 30)
+            time.sleep(2) # Wait 2 seconds before next refresh
+            
+    except KeyboardInterrupt:
+        print("\nMonitoring stopped by user.")
+
+if __name__ == "__main__":
+    main()
