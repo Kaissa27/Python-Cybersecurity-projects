@@ -1,0 +1,55 @@
+import sys
+
+def detect_port_scan(packets, threshold=3):
+    # Tracking: {Source_IP: {Set of unique ports targeted}}
+    attempts = {}
+    alerts = []
+
+    for p in packets:
+        src_ip = p["src"]
+        port = p["port"]
+
+        if src_ip not in attempts:
+            attempts[src_ip] = set()
+        
+        attempts[src_ip].add(port)
+
+    # Analyze findings
+    for ip, ports in attempts.items():
+        if len(ports) >= threshold:
+            alerts.append({
+                "ip": ip,
+                "count": len(ports),
+                "ports": sorted(list(ports))
+            })
+    
+    return alerts
+
+def main():
+    # Simulated packet capture data
+    traffic_log = [
+        {"src": "192.168.1.5", "port": 80, "protocol": "HTTP"},
+        {"src": "10.0.0.50",   "port": 22, "protocol": "SSH"},
+        {"src": "10.0.0.50",   "port": 23, "protocol": "Telnet"},
+        {"src": "10.0.0.50",   "port": 445, "protocol": "SMB"},
+        {"src": "192.168.1.5", "port": 80, "protocol": "HTTP"},
+        {"src": "10.0.0.50",   "port": 3389, "protocol": "RDP"},
+    ]
+
+    print("--- Intrusion Detection System (IDS) Simulation ---")
+    print("Scanning traffic for suspicious port activity...\n")
+
+    port_scans = detect_port_scan(traffic_log)
+
+    if not port_scans:
+        print("No threats detected. Network traffic appears normal.")
+    else:
+        for alert in port_scans:
+            print(f"[!] ALERT: Potential Port Scan Detected")
+            print(f"    Source IP: {alert['ip']}")
+            print(f"    Unique Ports Targeted: {alert['count']}")
+            print(f"    Targeted Services: {alert['ports']}")
+            print(f"    Risk Level: HIGH\n")
+
+if __name__ == "__main__":
+    main()
