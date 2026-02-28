@@ -39,4 +39,5 @@ def main():
     delete_database("SysOp_Bob", "Production_Server")
 
 if __name__ == "__main__":
+
     main()
