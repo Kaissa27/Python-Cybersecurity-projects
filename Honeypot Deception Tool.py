@@ -28,7 +28,7 @@ def main():
         user_input = input("login as: ")
         pass_input = input(f"{user_input}@{attacker_ip}'s password: ")
 
-        # The Honeypot ALWAYS rejects the password to keep the attacker trying
+        # The Honeypot always rejects the password to keep the attacker trying
         # while we log every single attempt they make.
         alert = log_intruder(attacker_ip, user_input, pass_input)
         
@@ -39,4 +39,5 @@ def main():
         if cont.lower() != 'y': break
 
 if __name__ == "__main__":
+
     main()
