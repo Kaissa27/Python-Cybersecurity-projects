@@ -13,7 +13,7 @@ class UserAccount:
     def _hash_func(self, password):
         """PBKDF2 (Password-Based Key Derivation Function 2) logic."""
         # We combine the password with the salt and hash it 100,000 times
-        # This makes 'Brute Force' attacks painfully slow for hackers
+        
         return hashlib.pbkdf2_hmac(
             'sha256', 
             password.encode('utf-8'), 
@@ -46,4 +46,5 @@ def main():
             print("  [FAILURE] Invalid Credentials.")
 
 if __name__ == "__main__":
+
     main()
