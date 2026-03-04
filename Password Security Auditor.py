@@ -1,4 +1,4 @@
-import re
+import re 
 
 # 1. Individual Validation Functions (The "Filters")
 def check_length(pwd):
