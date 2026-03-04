@@ -1,4 +1,4 @@
-import sys
+import sys 
 
 def detect_port_scan(packets, threshold=3):
     # Tracking: {Source_IP: {Set of unique ports targeted}}
