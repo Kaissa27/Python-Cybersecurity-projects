@@ -50,4 +50,5 @@ def main():
         user.check_access(target_resource)
 
 if __name__ == "__main__":
+
     main()
