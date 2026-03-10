@@ -1,5 +1,5 @@
 import functools
-import time
+import time 
 
 # 1. The Security Decorator: Wraps any function with an MFA check
 def require_mfa(func):
@@ -41,3 +41,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
