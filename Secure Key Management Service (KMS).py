@@ -2,7 +2,7 @@ import hashlib
 import time
 import uuid
 
-# Base Class: Represents a Cryptographic Key
+# Base Class: Represents a Cryptographic Key 
 class CryptoKey:
     def __init__(self, owner):
         self.key_id = str(uuid.uuid4())[:8]
@@ -70,4 +70,5 @@ def main():
         print(entry)
 
 if __name__ == "__main__":
+
     main()
