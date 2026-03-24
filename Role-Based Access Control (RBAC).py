@@ -44,7 +44,7 @@ def main():
 
     target_resource = "SECURE_DATABASE_V1"
 
-    print("--- Cyber-Security RBAC Simulation ---")
+    print("--- RBAC Simulation ---")
     for user in users:
         print(f"\nRequesting Access for: {user.username}")
         user.check_access(target_resource)
