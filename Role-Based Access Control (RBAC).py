@@ -14,7 +14,7 @@ class User:
     def check_access(self, resource):
         print(f"[ACCESS DENIED] {self.username} ({self.role}) cannot access {resource}")
 
-# Inheritance: Admin inherits from User
+# Inheritance: Admin inherits from User 
 class Admin(User):
     def __init__(self, username, password):
         super().__init__(username, password)
