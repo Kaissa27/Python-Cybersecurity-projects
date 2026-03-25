@@ -9,7 +9,7 @@ def main():
     # Simulated system files and their "Last Known Good" fingerprints
     baseline = {
         "/etc/passwd": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
-        "/bin/login": "f2ca1bb6c7e907d06dafe4687e579fce76b3776e21e7c10b1ad9441c11f5997a"
+        "/bin/login": "f2ca1bb6c7e907d06dafe4687e579fce76b3776e21e7c10b1ad9441c11f5997a" 
     }
 
     # Current "Live" state of the files
