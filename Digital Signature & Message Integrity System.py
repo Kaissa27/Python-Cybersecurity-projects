@@ -10,7 +10,7 @@ class SecureMessage:
         self.__signature = self._generate_signature()
 
     def _generate_signature(self):
-        """Creates a unique hash based on the sender, content, and time."""
+        """Creates a unique hash based on the sender, content, and time.""" 
         raw_data = f"{self.sender}{self.content}{self.timestamp}"
         return hashlib.sha256(raw_data.encode()).hexdigest()
 
