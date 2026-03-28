@@ -1,6 +1,6 @@
 import hashlib
 
-# Base Class: Demonstrates Abstraction and Encapsulation
+# Base Class: Demonstrates Abstraction and Encapsulation 
 class User:
     def __init__(self, username, password):
         self.username = username
