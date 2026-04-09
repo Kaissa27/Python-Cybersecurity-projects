@@ -35,7 +35,7 @@ class Auditor(User):
         print(f"[READ-ONLY ACCESS] Auditor {self.username} is viewing {resource}.")
 
 def main():
-    # Creating a list of different user objects
+    # Creating a list of different user objects 
     users = [
         User("jdoe_99", "password123"),
         Admin("root_sys", "S3cure_P@ss!"),
