@@ -49,7 +49,7 @@ def main():
     print("\n--- ATTACK IN PROGRESS ---")
     msg2.content = "Meet at the dark alley." # Direct modification of the object
     
-    server.receive_message(msg2)
+    server.receive_message(msg2) 
 
     # 3. View legitimate inbox
     print("\n--- Secure Inbox ---")
